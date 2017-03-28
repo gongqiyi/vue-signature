@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+   Remove this if you use the .htaccess -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<!-- <meta name="viewport" content="initial-scale=1.0, target-densitydpi=device-dpi" /> --><!-- this is for mobile (Android) Chrome -->
+<meta name="viewport" content="initial-scale=1.0, width=device-height"><!--  mobile Safari, FireFox, Opera Mobile  -->
+
+<script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+
+
+<!--[if lt IE 9]>
+<script type="text/javascript" src="../libs/flashcanvas.js"></script>
+<![endif]-->
+<style>
+  #tools span,#tools select,#tools textarea{
+    display: none;
+  }
+  
+html,body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', 'Noto', sans-serif;
+  }
+   h1{
+   	font-size: 0.5rem;
+   }
+		
+   
+  .header{
+		background-color: #00AFEF;
+			width: 100vw;
+			height: 65px；
+			position:relative;
+		}
+   .first{
+   	font-size: 50px;
+   	color: #fff;
+   	font-family: sans-serif;
+   	transform: scaleX(0.91932);
+   	vertical-align: .1rem;
+   	margin-left: 10px;
+   	font-weight:bold;
+   }
+   .second{
+   	font-size: 40px;
+   	color: #fff;
+   	font-family: sans-serif;
+   	transform: scaleX(0.91932);
+   	vertical-align: .1rem;
+   	margin-left: -10px;
+   	font-weight: bold;
+   }
+   .time{
+ margin-left: 80vw;
+   }
+   .time #show{
+   	 font-weight: 100;
+   }
+  .name{
+  	margin-bottom: 70px;
+  }
+   .name1{
+   	  	margin-top: 100px;
+
+   }
+   .name img{
+   	vertical-align: -10px;
+   margin-left: 100px;
+   }
+
+   .name{
+   	font-size: .4rem;
+   	vertical-align: -0.05rem;
+   	margin-left: 1rem;
+   }
+
+	.board {
+		margin-top:1em;
+		margin-bottom:1em;
+	 
+	}
+	.form-control{
+		margin-left: -0.3rem;
+		font-size: .3rem;
+	}
+	.btn{
+		font-size: .3rem;
+		margin-left: 2rem;
+	}
+	input {
+		padding: .5em;
+		margin: .5em;
+	}
+	select {
+		padding: .5em;
+		margin: .5em;
+	}
+	
+	/*#signatureparent {
+		color:darkblue;
+	
+		max-width:600px;
+		padding:20px;
+	}
+	*/
+	/*This is the div within which the signature canvas is fitted*/
+	#signature {
+		border: 0px dotted black;
+		background-color:#fff;
+		margin-left: 205px;
+		margin-top: -45px;
+		width:630px;
+		height: 400px;
+	}
+
+    #signature img{
+    	opacity: 0;
+    }
+	/* Drawing the 'gripper' for touch-enabled devices */ 
+	html.touch #content {
+		float:left;
+		width:92%;
+	}
+	html.touch #scrollgrabber {
+		float:right;
+		width:4%;
+		margin-right:2%;
+		background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAFCAAAAACh79lDAAAAAXNSR0IArs4c6QAAABJJREFUCB1jmMmQxjCT4T/DfwAPLgOXlrt3IwAAAABJRU5ErkJggg==)
+	}
+	html.borderradius #scrollgrabber {
+		border-radius: 1em;
+	}
+	  .done {
+    color: #ddd;
+  }
+  ul.active li.done {
+    display: none;
+  }
+  ul.completed li:not(.done) {
+    display: none;
+  }
+  .on {
+    color: red;
+  }
+.inputTodo{
+	font-size: 30px;
+	width: 450px;
+	height: 40px;
+	border-top: 0px;
+	border-left: 0px;
+	border-right: 0px;
+	border-radius: 0px;
+	border-bottom: 2px solid black;
+	margin-left: 80px;
+}
+.name{
+	display: inline-block;
+
+}
+.three{
+	display: inline-block;
+	margin-left: .3rem;
+}
+.sign{
+	margin-left:110px;
+	margin-top: 1rem;
+}
+footer{
+    position: absolute;
+   left: 200px;
+bottom:350px;
+
+
+
+}
+.reset1{
+	position: absolute;
+	top: 215px;
+	left: 77vw;
+	font-size: 28px;
+	
+}
+.reset2{
+	position: absolute;
+	font-size: 28px;
+	left: 77vw;
+	top: 327px;
+	
+}
+#tools{
+	position: relative;
+}
+#scrollgrabber{
+display: none;
+}
+
+.post{
+	margin-top: 600px;
+	margin-left: 400px;
+
+	display: inline-block;
+	font-size: 50px;
+
+}
+section{
+	display: relative
+}
+.left1{
+	width: 10px;
+	height: 10px;
+	border-left: 1px dotted;
+	border-top: 1px dotted;
+	margin-left:205px;
+	position: absolute;
+	top: 470px;
+	left: -102px;
+
+
+
+	
+}
+.right1{
+		width: 10px;
+	    height: 10px;
+	    border-right: 1px dotted;
+	    border-top: 1px dotted;
+	    margin-left:190px;
+	    position: absolute;
+	    right: 439px;
+	    top: 470px;
+
+	
+
+}
+.left2{
+	width: 10px;
+	height: 10px;
+	border-left: 1px dotted;
+	border-bottom: 1px dotted;
+	margin-left:205px;
+	position: absolute;
+	top: 815px;
+	left: -102px;
+
+
+}
+.right2{
+	width: 10px;
+	height: 10px;
+	border-right: 1px dotted;
+	border-bottom: 1px dotted;
+	margin-left:190px;
+	position: absolute;
+	right: 439px;
+    top: 815px;
+}
+
+</style>
+<script language="javascript" type="text/javascript">
+<!--
+//获得当前时间,刻度为一千分一秒
+var initializationTime=(new Date()).getTime();
+function showLeftTime()
+{
+var now=new Date();
+var year=now.getYear()+1900;
+var month=now.getMonth()+1;
+var day=now.getDate();
+var hours=now.getHours();
+var minutes=now.getMinutes();
+var seconds=now.getSeconds();
+document.all.show.innerHTML=""+year+"/"+month+"/"+day+"   "+hours+":"+minutes+":"+seconds+"";
+//一秒刷新一次显示时间
+var timeID=setTimeout(showLeftTime,1000);
+}
+//-->
+</script>
+</head>
+<body onload="showLeftTime()">
+
+<div class="header"><span class="first">W</span><span class="second"> ELCOME</span></h1></div>
+<div class="time"><label id="show">显示时间的位置</label></div>
+<div class="log"><!-- <img src="1.jpg" style="width: 330px;height: 165px;margin-left:350px;"> --></div>
+
+    <header>
+     <form >
+      <div class="name name1"><!-- <img src="2.png"> --></div></span><input type="text" class="inputTodo" name="name">
+      <input type="reset" name="" value="Reset" class="reset reset1">
+      <br>
+      </form>
+      <form>
+     <div class="name"><!-- <img src="3.png"> --></div><input type="text" class="inputTodo two" name="email" >
+      <input type="reset" name="" value="Reset" class="reset reset2">
+       <br>
+      </form>
+    </header>
+    <section>
+<div id="app"></div>
+<!--   <img src="4.png" class="sign">
+ -->  <div class="left1"></div>
+  <div class="right1"></div>
+  <div class="left2"></div>
+  <div class="right2"></div>
+  </section>
+<div class="board">
+<div id="content">
+  <div id="signatureparent">
+    <div></div>
+    <div id="signature"></div></div>
+  <div id="tools">
+    <input type="button" class="post" value="OK" style="font-size: 50px;position: absolute;top: -600px;left:-100px;"></input>
+  </div>
+  <div><p></p><div id="displayarea"></div></div>
+</div>
+<div id="scrollgrabber"></div>
+</div>
+<br>
+
+<footer>Copyright(C)SOT 2014-2017 All Rights Reserved.</footer>
+
+<script>
+
+   document.querySelector(".post").addEventListener("click",function(){
+    var canvas = document.querySelector("#canvas")
+    var canvasData = canvas.toDataURL("image/png")
+    var name = document.querySelector("input[name='name']").value
+    var time = document.querySelector("#show").innerHTML
+    var email = document.querySelector("input[name='email']").value
+    if(name == "" || email == ""){
+      return
+    }else{
+      var result = {'name':name,'email':email,"time":time,'image':canvasData}
+     
+      for(var i=0; i<10; i++){
+      localStorage.setItem("data",JSON.stringify(result))
+      }
+    }
+   document.querySelector("input[name='re']").click()
+    $.post("http://192.168.10.44:8080/EHR/cusInformation.action?",{"name":name,"email":email,"time":time,"image":canvasData}) 
+     document.querySelector("input[name='name']").value = ""
+     document.querySelector("input[name='email']").value = ""
+     alert('success！')
+   
+   })
+ 
+</script>
+
+</body>
+</html>
