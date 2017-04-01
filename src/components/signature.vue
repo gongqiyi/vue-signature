@@ -99,6 +99,7 @@ export default {
     }
   }
 }
+
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
@@ -132,6 +133,6 @@ a {
 .hello input   {
   font-size:28px;
 position:absolute;
-right:300px;
+right:275px;
 }
 </style>

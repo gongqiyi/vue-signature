@@ -13,6 +13,8 @@
   },
   "dependencies": {
     "mint-ui": "^2.1.0",
+    "store.js": "^1.0.4",
+    "utility": "^1.11.0",
     "vue": "^2.1.0"
   },
   "devDependencies": {

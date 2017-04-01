@@ -4,6 +4,8 @@ import Vue from 'vue'
 import MintUI from 'mint-ui'
 import App from './App'
 
+// import store from '../store.js'
+
 
 /* eslint-disable no-new */
 new Vue({
